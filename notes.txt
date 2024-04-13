@@ -1,0 +1,10 @@
+node js - JS run time env, used for server side programming
+not a lang/ library/ framework
+
+node repl(read evaluate print loop) -
+.help gives us command
+
+process- provides info about and cntrl over the current node.js process
+process.argv- returns an array containing the commaand line args passed 
+    when the node.js process was launched
+
