@@ -1,6 +1,26 @@
 node js - JS run time env, used for server side programming
 not a lang/ library/ framework
 
+node js is an open-source and cross platform javascript
+run time env.
+node.js runs the v8 javscript engine, the core ofgoogle chrome, outside of the browser.
+ node js runs in a single process, without creating a new thread for 
+ every req.
+
+ node.js uses event driven , non blocking I/object
+ model to handle concurrent request with single thread.
+
+ why is node.js popular?
+  javascript everywhere(client +server)
+  fast performance
+  lightweight- build in event driven architecture
+  faster time to market
+  modern architecture and scalibility
+  cross platform- creating APIs
+  vast number of libraries and packages
+  can be hosted anywhere
+
+
 node repl(read evaluate print loop) -
 .help gives us command
 
@@ -25,6 +45,51 @@ repl
 4. use (_) to get the last result
 5. we can use editor method
 
+consider modules to be the same as javascript librraies.
+a set of functions you want to include in your application
+node.js has a set of built-in modules which you can see without any
+further installation.
 
+node.js includes an additional data type called buffer.
+(not available in browsers javascript)
+buffer is mainly used to store binary data, while reading from a file or recieving packets over the network.
+ 
+build apps with node.js
+  streaming web applications like Netflix, amazon
+  real time web applicaions like chat, IM
+  microservices and IOT applications
+  build any mern stack application like ecoomerce, payments
+  social media and networking applicatins like linkedin, medium
+  create restful APIs
 
+Node.js VS browser
+   both browser and node.js use javascript as their
+   programming language
+   
+   building apps that run in the browser is a completely different thing than building a node.js application
+ 
+   while browser we have access to DOM, Web API where as with Node.js we havemodules provide to
+   access to file system, OS.
+
+   Node.js supports both the CommonJs require() and ESModules systems
+   import() while in the browser we are starting to see the ES5
+   Modules standard being implemented.
+
+   js concepts to know: 
+   classes, objects, functions , scopes and loops, variables, expressions, types
+   async await, closures, async programming and callbacks 
+   and event loop
+
+whenever you make a change it should automatically detect and exceute the module for
+that we have nodemon
+ install 
+  to install it globally-
+    npm i -g nodemon
+ or install it as an dev dependancy
+   npm i --save-dev nodemon
+
+exit from the script 
+ process.exit(0);
+
+read env variables in node.js
 
