@@ -1,6 +1,15 @@
 node js - JS run time env, used for server side programming
 not a lang/ library/ framework
 
+javascript language sirf browser ke andr hi execute ho sakti hai
+chrome-v8 engine
+ryan dahl- developer of node.js
+chrome's v8 engine + c++ code => node.js
+benefit of embedding c++ with chrome v8 engine is that-
+ you can run js outside of the browser, javascript can talk to native machine
+ because of c++,
+ you can create webservers in js language
+
 node js is an open-source and cross platform javascript
 run time env.
 node.js runs the v8 javscript engine, the core ofgoogle chrome, outside of the browser.
@@ -19,7 +28,6 @@ node.js runs the v8 javscript engine, the core ofgoogle chrome, outside of the b
   cross platform- creating APIs
   vast number of libraries and packages
   can be hosted anywhere
-
 
 node repl(read evaluate print loop) -
 .help gives us command
@@ -92,4 +100,33 @@ exit from the script
  process.exit(0);
 
 read env variables in node.js
+
+node -r dotenv/config env.js
+
+REPL-read evaluate print and loop
+ if you want to use node CLI.
+ in terminal write node 
+   
+Number. tab button - give all the property you can use open
+                    number - write in node CLI
+                
+if you want to write that programatically then,
+  
+const repl = require("repl");
+
+const local = repl.start("node console starts");
+
+and then in terminal write node repl.js
+ the node CLI will appear.
+
+ local.on('exit', () => {
+    console.log("exiting REPL");
+    process.exit();
+});   - to exit with some message
+
+process is a very powerful module in the js
+
+whenever you run a node file and you want to pass
+an arguments- 
+ make an arguments.js file
 
