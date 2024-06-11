@@ -10,6 +10,11 @@ benefit of embedding c++ with chrome v8 engine is that-
  because of c++,
  you can create webservers in js language
 
+v8 engine directly embedd nhin kiya gya hai jitne bhi
+dom ke elements hain unko nikaal diya gya hai
+or anything related to window, or anything related to UI
+
+
 node js is an open-source and cross platform javascript
 run time env.
 node.js runs the v8 javscript engine, the core ofgoogle chrome, outside of the browser.
@@ -28,6 +33,8 @@ node.js runs the v8 javscript engine, the core ofgoogle chrome, outside of the b
   cross platform- creating APIs
   vast number of libraries and packages
   can be hosted anywhere
+
+
 
 node repl(read evaluate print loop) -
 .help gives us command
@@ -130,3 +137,13 @@ whenever you run a node file and you want to pass
 an arguments- 
  make an arguments.js file
 
+npm- node package manager
+
+npm init - make a template for us or rather a file 
+   that helps us run the project
+so whenever we make a new project we have to npm init.
+ after we run npm init - well see there is a package.json file made
+   it is like a config file 
+
+modules - 
+require function

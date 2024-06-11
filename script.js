@@ -19,3 +19,18 @@
 // // to rename a file
 // fs.renameSync("read.txt" ,"readwrite.txt");
 
+// function hello() {
+//     console.log("bye");
+// }
+
+// function bye() {
+//     console.log("hello");
+// }
+// // to export multiple functions use objects
+// module.exports = {
+//     hello, bye
+// }
+
+// exports.add = (a, b) => a + b;
+// exports.sub = (a, b) => a - b;
+
