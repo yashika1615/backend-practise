@@ -147,3 +147,9 @@ so whenever we make a new project we have to npm init.
 
 modules - 
 require function
+ 
+ fs- file system
+ in node js fs module is inbuilt
+blocking and non blocking req
+
+
