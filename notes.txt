@@ -152,4 +152,79 @@ require function
  in node js fs module is inbuilt
 blocking and non blocking req
 
+file handling is not possible in normal javascript
+bcoz of security purposes but node.js gives you fs modules with which you can interact with file modules
+
+what is node.js architecture?
+  the flow of node.js starts from a client
+client(runs on node js server) ->client makes a request to
+  a server -> 
+
+  event queue- jitni bhi requests aati hain voh sab iss event queue main queue hoti hain 
+          line main lagti jayegii
+  and after that the req goes into an event loop 
+
+event loop- ek aisi machine jo humare event queue ke upar humesha watch kar rha hai
+    yeh chalta rehta hai dekhta rehta hai ki koi request toh nhin aayi
+  aur agr queue ke andr koi bhi req aati hai toh yeh usko uthata hai fifo principle par
+  the req that came first will be picked first
+so the work of event loop is to watch event queue and remove req from that one by one
+
+now when we pick up any req that can be of two types 
+blocking operations(synchronous) and non blocking operations
+(asynchronous)
+so when event loop picks up a request from event queue
+it checks if it is blocking or non blocking
+
+if it non blocking voh usko process karegi aur user ko response dedegi
+and if it is blocking operation then,
+
+blocking operation---------------------------> thread pool
+              (i need a thread/worker)
+            (assign a worker and make him work)
+ 
+                       returns the result<----------
+
+if it is blocking operation then , to resolve the req this blocking operation goes to the
+thread pool  
+
+thread pool- pool of threads jismain bhut saaare threads hain 
+   aur these threads are responsible for fulfilling your blocking operations
+  understand this thread as worker jo tumhare liye kaam krte hain
+
+every thread is assigned to a blocking operation ki voh iss kam ko krega
+ 
+so , blocking operations thread poool ko keh rha hai : i need a thread or a worker
+aur thread pool check kr rha ki threads/worker available hai bcoz humare pass yeh threads limited hote hain
+toh agr uske pass yeh worker hoga toh yeh usko assign kr dega 
+so when the work will be completed then the worker will again come and sit in the thread pool
+and will return the result
+
+this was the complete node js architecture
+
+client-> sends request-> request goes into event queue->event loop picks 
+up the request -> checks if it blocking or non blocking ->
+if non blocking operation then it get completed on the stop -> and then send back the response to the client->
+ and if it is blocking operation then it goes to thread pool and then vahan pe threads hote hain worker hote hain
+ voh threads humare kaam ko fulfill karte hain and return the
+ result 
+
+now the problem,
+the threads you have are limited ,by default voh 4 threads use krte hain
+suppose the code you have written is blocking code 
+now the user1 has come with blocking request and has taken 1 worker and that is getting processed
+user2 comes and voh bhi process ho rha hai 
+same with user3 , user4 
+now all the workers have become busy , so
+when user5 will come he will have to wait for the workers to get free,
+pehle 4 workers pehle 4 users ne block kr liye 
+now if the worker of user1 gets free , then the execution of user5 starts
+so it will cause scalability issue-> the waiting time will increase
+that is why it is not recommended to write blocking code
+and always suggested to write non blocking code 
+
+
+
+
+how does node.js works internally?
 
