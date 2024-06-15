@@ -223,8 +223,39 @@ so it will cause scalability issue-> the waiting time will increase
 that is why it is not recommended to write blocking code
 and always suggested to write non blocking code 
 
+can the size of thread pool be increased?
+  Yes
 
+how much ? 
+ jitne tumhare pass cpu hain
 
+deafult thread pool size- 4
+max? suppose -8core cpu  so number of thread pools will also be 8 
+   const os = require('os');
+console.log(os.cpus().length);
+
+a module in node.js -os in which givees you your system info
 
 how does node.js works internally?
 
+BUILDING HTTP SERVER IN NODE.JS
+  for that we have an inbuilt module HTTP
+
+  const http= require("http");
+  with the help of this package we can build our own server
+
+const myServer= http.createServer() - this function creates an
+    server for us - web server
+   jo pura webserver hai usko handle kon karega uski request ko kon handle karega
+   usko handle karne ke liye humare pass ek handler function chahiye jo incoming req
+   ko process kar sake
+
+createServer takes a callback function named requestlistener jo
+incoming req ko process kar sake
+and takes two arguments req, res
+whenever any request comes to the server it runs that callback function
+first argument main yeh object ko daalega jismain request ki saari information hogii
+jaise kon user hai jo request kar rha hai uss user ka ip address kya hai , uss user ne kis cheez ko request kiya hai
+
+now to run this server you we will need a port number
+so voh port number ke upar iss server ko listen karwayenge for the incoming request
