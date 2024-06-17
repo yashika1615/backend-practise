@@ -259,3 +259,37 @@ jaise kon user hai jo request kar rha hai uss user ka ip address kya hai , uss u
 
 now to run this server you we will need a port number
 so voh port number ke upar iss server ko listen karwayenge for the incoming request
+
+HTTP METHODS
+http - hypertext transfer protocol 
+https- hypertext transfer protocol secure
+
+protocol- ki jo mera yeh server hai uske saath communicate kaise karna hai
+
+
+URL- UNIFORM RESOURCE LOCATOR
+    ex: https://www.google.com/
+
+  in this example,
+  https- protocol: hypertext transfer protocol secure
+   here s means secure -> means jitni bhi req aur
+     response hongi voh encrypted hongii
+     and here ssl certificate is used 
+
+
+www.google.com - domain - user friendly name of IP ADDRESS OF my server
+path - /home page or root page
+
+url path - yashika.dev/contact-us
+
+nested path->  yashika.dev/project/1
+
+URL QUERY PARAMETERS
+query parameters- extra infromation that we can pass with our URL
+
+yashika.dev/about?userId=1&a=2
+
+yashika.dev- domain
+/about- path
+? - anything that comes after ? is query parameter
+
