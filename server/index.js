@@ -1,25 +1,30 @@
 const http = require("http");
 const fs = require("fs");
 
-
 const myServer = http.createServer((req, res) => {
-    const log = '${Date.now()}:${req.url} New Req Recieved\n';
+    if (req.url === "/favicon.ico") return res.end();
+    const log = `${Date.now()}:${req.url} New Req Recieved\n`;
     console.log(log);
-    fs.appendFile('log.txt', log, (err, data) => {
-        switch (req.url) {
-            case '/': res.end("home page");
-                break
-            case '/about': res.end("hello its me ");
-                break;
-            default:
-                res.end("404 not found");
+    fs.appendFile('log.txt', log, (err) => {
+        if (err) {
+            console.error(err);
+            res.statusCode = 500;
+            return res.end("Internal Server Error");
         }
-       res.end("Hello from server again");   
+
+        if (!res.finished) {
+            switch (req.url) {
+                case '/':
+                    res.end("home page");
+                    break;
+                case '/about':
+                    res.end("hello its me");
+                    break;
+                default:
+                    res.end("404 not found");
+            }
+        }
     });
 });
-    //    // console.log("new request recieved");
-    //     console.log(req);
-    //     res.end("Hello from server again");
-  
 
 myServer.listen(8000, () => console.log("server started"));
