@@ -293,3 +293,23 @@ yashika.dev- domain
 /about- path
 ? - anything that comes after ? is query parameter
 
+HTTP METHODS-
+GET, POST, PUT, PATCH, DELETE
+
+HTTP GET- when you want to get some data from the server
+suppose we have browser and you add any link so that is a get request to our server
+means when you type google.com means you want to get that data from the server
+by default our browser does get request
+
+HTTP POST- when you want to send and mutate some data in the server
+
+put- file /image upload then put request- 
+   put req is done when to put something on the server
+  
+patch - do change something- existing entry ko change krna hai
+
+delete- suppose we have to delete an account
+
+EXPRESS.JS
+
+
